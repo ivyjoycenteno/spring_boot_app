@@ -1,19 +1,7 @@
 package com.rijio.blog.controller;
 
-import com.rijio.blog.payload.JWTAuthResponse;
-import com.rijio.blog.payload.SignupDto;
-import com.rijio.blog.payload.loginDto;
-import com.rijio.blog.repository.RoleRepository;
-import com.rijio.blog.repository.UserRepository;
-import com.rijio.blog.security.JwtTokenProvider;
-
-import java.util.Collection;
 import java.util.Collections;
 
-import com.rijio.blog.entity.Role;
-import com.rijio.blog.entity.User;
-
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +15,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rijio.blog.entity.Role;
+import com.rijio.blog.entity.User;
+import com.rijio.blog.payload.JWTAuthResponse;
+import com.rijio.blog.payload.SignupDto;
+import com.rijio.blog.payload.loginDto;
+import com.rijio.blog.repository.RoleRepository;
+import com.rijio.blog.repository.UserRepository;
+import com.rijio.blog.security.JwtTokenProvider;
+
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
